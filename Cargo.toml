@@ -11,6 +11,8 @@ ec-generic = "0.1.14"
 sha256 = "1.4.0"
 rand = "0.8.5"
 hex = "0.4.3"
-[[bin]]
-name = "ecdsa"
-path = "src/ecdsa.rs"
+
+#[[bin]]
+#name = "ecdh"
+#path = "src/ecdh.rs"
+#path = "src/ecdsa.rs"

@@ -16,7 +16,7 @@ impl ECDSA{
         let public_key = self.generate_publickey(private_key.clone());
         (private_key,public_key) 
     }
-    
+    #[allow(dead_code)]
     fn generate_privatekey(&self)->BigUint{
         let private_key = self.generate_positive_random_number_lessthan(self.q_order.clone());
         return private_key

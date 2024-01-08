@@ -1,5 +1,6 @@
 use num_bigint::BigUint;
-
+pub mod ecdh;
+pub mod ecdsa;
 
 pub struct EllipticCurve1{
      a:BigUint,
