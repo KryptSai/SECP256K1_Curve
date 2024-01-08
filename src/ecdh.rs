@@ -19,6 +19,7 @@ impl ecdh {
         return private_key
         
     }
+    //let 'a' is a secret then below fun generate a.P where 'P' is a generator of the elliptic curve group.
     fn generate_publickey(&self,private_key:&BigUint)->Point{
         self.ec_curve.scalar_mul(&self.a_gen, &private_key).unwrap() 
         
@@ -28,7 +29,7 @@ impl ecdh {
        let mut rng = rand::thread_rng;
        rng().gen_biguint_range(&BigUint::from(1u32),&max)
     }
-    //
+    //This fun generates the common diffie-helmann key which should be same for both alice and bob.
     fn generate_common_comp(&self,private_key:&BigUint,individual_comp:&Point) -> Point{
         let common_comp = self.ec_curve.scalar_mul(&individual_comp,&private_key).unwrap();
         return common_comp
